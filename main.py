@@ -51,6 +51,8 @@ def run_nova():
             talk(info)     
         elif 'joke' in command:
            talk(pyjokes.get_joke())
+        elif 'goodbye' in command or 'good bye' in command:
+            break
         else:
             talk('Please say the command again.')
 
