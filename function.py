@@ -45,8 +45,8 @@ def run_nova():
             time = datetime.datetime.now().strftime('%I:%M %p')
             talk('Current time is ' + time)
         elif question in command:
-            person = command.replace("What is", '')
-            info = wikipedia.summary(person, 1)
+            topic = command.replace("What is", '')
+            info = wikipedia.summary(topic, 1)
             print(info)
             talk(info)     
         elif 'joke' in command:
