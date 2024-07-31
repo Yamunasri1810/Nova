@@ -11,21 +11,6 @@ import wikipedia
 import pyjokes
 import os
 
-def read_email(imap_server, imap_username, imap_password):
-    # Email reading function
-    pass
-
-def send_email(smtp_server, smtp_username, smtp_password, recipient, subject, body):
-    # Email sending function
-    pass
-
-def recognize_face(frame):
-    # Face recognition function
-    pass
-
-def run_nova():
-    # Speech recognition and command execution function
-    pass
 
 def main():
     imap_server = "imap.gmail.com"
