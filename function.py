@@ -92,8 +92,6 @@ def run_nova():
             alarm_time = int(time)
             message = command
             set_alarm(alarm_time, message)
-        except sr.UnknownValueError:
-            print("Sorry, I didn't understand that")
         else:
             talk('Please say the command again.')
 
