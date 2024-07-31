@@ -44,6 +44,15 @@ def decrease_volume(percent=10):
     new_volume = max(0.0, current_volume - (percent / 100))
     stream.set_volume(new_volume)
 
+def set_alarm(alarm_time, message):
+    print(f"Alarm set for {alarm_time} - {message}")
+    while True:
+        now = datetime.datetime.now()
+        if now.hour == alarm_time.hour and now.minute == alarm_time.minute:
+            print(message)
+            os.system("start alarm_sound.mp3")
+            break
+
 def run_nova():
     print("Hi I’m Nova. How can I help you?")
     while True:
@@ -79,6 +88,10 @@ def run_nova():
                 percent = int(command.split("by")[1].split("%")[0])
             decrease_volume(percent)
             print(f"Decreased volume by {percent}%")
+        elif "alarm" in command or "remaind" in command or "notify" in command or "make a note" in command:
+            alarm_time = int(time)
+            message = command
+            set_alarm(alarm_time, message)
         except sr.UnknownValueError:
             print("Sorry, I didn't understand that")
         else:
